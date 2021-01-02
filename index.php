@@ -16,7 +16,7 @@
 			
 		}
 		else {
-		$checkedIds = [415,483];
+		$checkedIds = ["407"];
 		}
 
 	//	$checkedIds = ["471"] ;
@@ -41,10 +41,11 @@
 		foreach ($checkedIds as $indicator => $checkedId) {
 			//dd($checkedId);
 			if ($checkedId < 1000){
+                $categories_tree[$indicator] = [] ;
 				$categories_tree[$indicator] = getChildrenFor($all_categories_tree, $checkedId);
             }
             
-            var_dump($categories_tree[$indicator]);die();
+          //  var_dump($categories_tree[$indicator]);die();
 			if ($action == "add" && $checkedId < 1000) {
 				array_walk_recursive(
 					$categories_tree[$indicator],
@@ -126,7 +127,7 @@
         
         
 //	if (!$requestTest){
-		dd($all_categories_tree);
+		var_dump($all_categories_tree);
 	//	}
 
 

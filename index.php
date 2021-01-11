@@ -86,9 +86,7 @@
 			}
 
 			if ($action == "add") {
-				
-
-
+			$categories_tree_path[$indicator] ;
 
 			}
 			if ($action == "remove") {

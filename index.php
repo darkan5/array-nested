@@ -47,7 +47,7 @@ function sprawdzajWGore(&$p__all_categories_tree,  $p__categories_tree_path, $il
 	
 }
 
-    function mycourses($checkedIds = ["4242"], $action = "add",$request = 0, $requestTest = false)
+    function mycourses($checkedIds = ["4242"], $action = "add",$request = 0, $requestTest = false,$zmienna = false)
 	{
 
 		//dd($request);
@@ -71,8 +71,11 @@ function sprawdzajWGore(&$p__all_categories_tree,  $p__categories_tree_path, $il
 	//    $checkedIds = explode(',', $req['inputValue']);
 		/// all tree with course
 		//dd($checkedIds);
+		if ($zmienna){
+		$all_categories_tree = $zmienna ;
+		}else {
 		$all_categories_tree = getRecurringCategories(0);
-
+		}
 		//dnl($all_categories_tree);
 		//dd($all_categories_tree);
 		// all tree course  checked

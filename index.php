@@ -1,9 +1,11 @@
 <?php
 
-
-	mycourses();
-	echo("<hr/>");
-    mycourses(["407"],"remove");
+echo ("<h1>1</h1>");
+	mycourses(["4242"],"add");
+echo ("<h1>2</h1>");
+	mycourses(["407"],"remove");
+//echo ("<h1>3</h1>");
+//mycourses(["407"], "remove");
 
 function sprawdzajWGore(&$p__all_categories_tree,  $p__categories_tree_path, $ileOdjac,$checked){
 

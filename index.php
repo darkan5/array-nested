@@ -2,7 +2,7 @@
 
 
     mycourses();
-
+    mycourses(["407"],"remove");
 
 function sprawdzajWGore(&$p__all_categories_tree,  $p__categories_tree_path, $ileOdjac,$checked){
 
@@ -44,12 +44,12 @@ function sprawdzajWGore(&$p__all_categories_tree,  $p__categories_tree_path, $il
 	
 }
 
-    function mycourses($request = 0, $requestTest = false)
+    function mycourses($checkedIds = ["4242"], $action = "add",$request = 0, $requestTest = false)
 	{
 
 		//dd($request);
 		//$action = "remove";
-		$action = "add";
+		
 		//dd($action);
 		if ($requestTest){
 			$req = array();
@@ -60,7 +60,7 @@ function sprawdzajWGore(&$p__all_categories_tree,  $p__categories_tree_path, $il
 		//$checkedIds = ["407"];
 		}
 
-		$checkedIds = ["4242"] ;
+		//$checkedIds = ["4242"] ;
 
 
 		//4242

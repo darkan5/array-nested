@@ -3,6 +3,47 @@
 
     mycourses();
 
+
+function sprawdzajWGore(&$p__all_categories_tree,  $p__categories_tree_path, $ileOdjac,$checked){
+
+	$biezaca = &$p__all_categories_tree;
+
+	if ( count($p__categories_tree_path) - $ileOdjac < 0 ){
+		return;
+	}
+
+
+	for ($i = 0; $i < count($p__categories_tree_path) - $ileOdjac +1 ; $i++ )  {
+		$biezaca = &$biezaca[ $p__categories_tree_path[$i] ];
+	}
+	
+	if ($checked > 0 ) {
+	$biezaca["checked"] = 1;
+	}else 
+	{
+		$biezaca["checked"] = 0;
+		$checked++ ;
+	}
+
+	$biezaca = &$p__all_categories_tree;
+	for ($i = 0; $i < count($p__categories_tree_path) - $ileOdjac -1 ; $i++ )  {
+		$biezaca = &$biezaca[ $p__categories_tree_path[$i] ];
+	}
+
+	if( $biezaca != $p__all_categories_tree) {
+			for ($i=0; $i < count($biezaca["children"]); $i++) { 
+				if( $biezaca["children"][$i]["checked"] !=1 ){
+					return; 	//chociaż jedna różna od zera to przerywa i kończy
+				}
+			}
+		
+			$ileOdjac += 2;
+			sprawdzajWGore( $p__all_categories_tree , $p__categories_tree_path, $ileOdjac, $checked );
+	}
+
+	
+}
+
     function mycourses($request = 0, $requestTest = false)
 	{
 
@@ -19,7 +60,7 @@
 		//$checkedIds = ["407"];
 		}
 
-		$checkedIds = ["4981"] ;
+		$checkedIds = ["4242"] ;
 
 
 		//4242
@@ -86,7 +127,12 @@
 			}
 
 			if ($action == "add") {
-			$categories_tree_path[$indicator] ;
+				$aaa = $categories_tree_path[$indicator] ;
+
+
+
+				sprawdzajWGore($all_categories_tree, $categories_tree_path[$indicator], 2,1);
+
 
 			}
 			if ($action == "remove") {

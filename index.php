@@ -1,8 +1,9 @@
 <?php
 
 
-    mycourses();
-    mycourses(["407"],"remove");
+	mycourses();
+	echo("<hr/>");
+  //  mycourses(["407"],"remove");
 
 function sprawdzajWGore(&$p__all_categories_tree,  $p__categories_tree_path, $ileOdjac,$checked){
 

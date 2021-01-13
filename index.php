@@ -47,7 +47,7 @@ function sprawdzajWGore(&$p__all_categories_tree,  $p__categories_tree_path, $il
 	
 }
 
-    function mycourses($checkedIds = ["4242"], $action = "add",$request = 0, $requestTest = false,$zmienna = false)
+    function mycourses($checkedIds = ["4242"], $action = "add", $zmienna = false,$request = 0, $requestTest = false)
 	{
 
 		//dd($request);

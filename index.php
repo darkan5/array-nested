@@ -1,11 +1,14 @@
 <?php
 
 echo ("<h1>1</h1>");
-	mycourses(["4242"],"add");
+$arr = mycourses(["4242"], "remove");
 echo ("<h1>2</h1>");
-	mycourses(["407"],"remove");
-//echo ("<h1>3</h1>");
-//mycourses(["407"], "remove");
+
+$arr2 = mycourses(["4242"], "add", $arr);
+
+echo ("<h1>3</h1>");
+
+$ar3 = mycourses(["471"], "remove", $arr2);
 
 function sprawdzajWGore(&$p__all_categories_tree,  $p__categories_tree_path, $ileOdjac,$checked){
 
@@ -22,6 +25,7 @@ function sprawdzajWGore(&$p__all_categories_tree,  $p__categories_tree_path, $il
 	
 	if ($checked > 0 ) {
 	$biezaca["checked"] = 1;
+		$biezaca["folderChecked"] = 1;
 	}else 
 	{
 		$biezaca["checked"] = 0;
